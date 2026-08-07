@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BiLSTM Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'chatbot/css/style.css' %}">
+</head>
+<body>
+
+<div class="scene">
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <main class="panel">
+    <header class="panel__header">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">
+          <span class="pulse pulse--fwd"></span>
+          <span class="pulse pulse--bwd"></span>
+        </div>
+        <div class="brand__text">
+          <h1>ARIA ECOMMERCE Chat</h1>
+          <p>Bidirectional LSTM Django</p>
+        </div>
+      </div>
+      <div class="status" id="status">
+        <span class="status__dot"></span>
+        <span id="status-label">connecting</span>
+      </div>
+    </header>
+
+    <section class="thread" id="thread" aria-live="polite">
+      <div class="msg msg--bot">
+        <div class="msg__bubble">
+          Hi, Say something .
+        </div>
+      </div>
+    </section>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Type a message…"
+        maxlength="300"
+        aria-label="Message"
+      />
+      <button type="submit" id="send-btn" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M3 11.5L21 3L14 21L11 13L3 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+
+    <footer class="meta" id="meta">
+      <span id="meta-text">last intent: </span>
+    </footer>
+  </main>
+</div>
+
+<script src="{% static 'chatbot/js/chat.js' %}"></script>
+</body>
+</html>

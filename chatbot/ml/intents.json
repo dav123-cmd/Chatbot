@@ -1,0 +1,977 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey there",
+        "Good morning",
+        "Good afternoon",
+        "Habari",
+        "Is anyone there?",
+        "Hey NeuralMart"
+      ],
+      "responses": [
+        "Hi there! Welcome to NeuralMart. How can I help you today?",
+        "Hello! I'm your NeuralMart assistant. What can I do for you?",
+        "Hey! Looking for something specific, or just browsing?",
+        "Karibu NeuralMart! How can I assist you today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "That's all, thanks",
+        "I'm done",
+        "Talk to you later",
+        "Kwaheri"
+      ],
+      "responses": [
+        "Thanks for shopping with NeuralMart! Have a great day.",
+        "Goodbye! Come back anytime you need help.",
+        "Take care, and happy shopping next time!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you",
+        "Thanks a lot",
+        "Appreciate it",
+        "That helped, thanks",
+        "Asante",
+        "Thanks for the help"
+      ],
+      "responses": [
+        "You're welcome! Anything else I can help with?",
+        "Happy to help! Let me know if you need anything else.",
+        "Anytime! Is there something else on your mind?"
+      ]
+    },
+    {
+      "tag": "chatbot_capabilities",
+      "patterns": [
+        "What can you do?",
+        "How can you help me?",
+        "What are you able to help with?",
+        "Are you a real person?",
+        "Am I talking to a bot?",
+        "What kind of questions can I ask you?"
+      ],
+      "responses": [
+        "I'm NeuralMart's AI assistant. I can help you track orders, process returns, answer questions about payments and M-Pesa, find products, manage your cart or wishlist, and connect you to a human agent if needed.",
+        "I'm an AI, not a human, but I can handle most things: order tracking, shipping questions, returns, payments, product search, and account help. For anything complex, I can loop in a human agent."
+      ]
+    },
+    {
+      "tag": "contact_human_agent",
+      "patterns": [
+        "I want to talk to a human",
+        "Connect me to a real person",
+        "Can I speak to customer support?",
+        "This isn't helping, I need an agent",
+        "Transfer me to a representative",
+        "Is there a human I can chat with?"
+      ],
+      "responses": [
+        "Of course — connecting you to a human support agent now. Please hold for a moment.",
+        "I'll transfer this conversation to our support team. They typically respond within a few minutes during business hours (8am–8pm EAT).",
+        "No problem, escalating to a live agent. In the meantime, can you briefly describe your issue so they can help faster?"
+      ]
+    },
+    {
+      "tag": "order_status",
+      "patterns": [
+        "Where is my order?",
+        "What's the status of my order?",
+        "Track my order",
+        "Has my order shipped yet?",
+        "Order #12345 status",
+        "I want to check my order",
+        "When will my package arrive?"
+      ],
+      "responses": [
+        "Sure — could you share your order number or the email you used to place the order?",
+        "Let me look that up. Please provide your order ID (found in your confirmation email) and I'll check the current status.",
+        "I can check that for you. What's the order number?"
+      ]
+    },
+    {
+      "tag": "order_history",
+      "patterns": [
+        "Show me my past orders",
+        "I want to see my order history",
+        "What have I bought before?",
+        "List my previous purchases",
+        "Where can I see all my orders?"
+      ],
+      "responses": [
+        "You can view all past orders under 'My Account' > 'Order History'. Want me to pull up your most recent ones here instead?",
+        "Your order history is available in your account dashboard. I can also list your last few orders if you'd like — just confirm your account email."
+      ]
+    },
+    {
+      "tag": "order_cancel",
+      "patterns": [
+        "Cancel my order",
+        "I want to cancel order #4521",
+        "How do I cancel a purchase?",
+        "Can I still cancel before it ships?",
+        "Please stop my order from shipping"
+      ],
+      "responses": [
+        "I can help with that. Orders can be cancelled free of charge before they're marked 'Processing'. What's the order number?",
+        "If your order hasn't shipped yet, cancellation is usually instant. Share the order ID and I'll check if it's still eligible.",
+        "Once an order ships, it can't be cancelled — but you can request a return instead. Let me check the current status first."
+      ]
+    },
+    {
+      "tag": "order_modify",
+      "patterns": [
+        "Can I change my shipping address after ordering?",
+        "I need to update my delivery address",
+        "Can I add an item to an existing order?",
+        "I want to change the size I ordered"
+      ],
+      "responses": [
+        "If the order hasn't shipped yet, I can update the delivery address for you. What's the order number and the new address?",
+        "Once packed, items can't be added or swapped — but you can place a new order or return this one after delivery. Has your order shipped yet?"
+      ]
+    },
+    {
+      "tag": "delivery_time",
+      "patterns": [
+        "How long does delivery take?",
+        "How many days for shipping?",
+        "When will I get my order?",
+        "Delivery time to Nairobi",
+        "How fast is shipping to Mombasa?",
+        "Estimated delivery date"
+      ],
+      "responses": [
+        "Delivery within Nairobi typically takes 1–2 business days. Other major towns take 2–4 days, and remote areas may take up to 6 days.",
+        "Standard delivery is 2–5 business days depending on your location. Express delivery (Nairobi only) arrives within 24 hours for an extra fee.",
+        "It depends on your delivery location — could you tell me your county so I can give you a more accurate estimate?"
+      ]
+    },
+    {
+      "tag": "shipping_cost",
+      "patterns": [
+        "How much is delivery?",
+        "What's the shipping fee?",
+        "Is shipping free?",
+        "Delivery charges to Kisumu",
+        "Do you charge for shipping?"
+      ],
+      "responses": [
+        "Shipping is free on orders over KES 3,000. Below that, standard delivery costs KES 200 within Nairobi and KES 350–500 upcountry.",
+        "Delivery fees vary by location and order weight, calculated automatically at checkout. Want me to estimate it for a specific address?",
+        "Free shipping applies to orders above KES 3,000. Otherwise it's a flat KES 200–500 depending on your county."
+      ]
+    },
+    {
+      "tag": "international_shipping",
+      "patterns": [
+        "Do you ship outside Kenya?",
+        "Can I order from Uganda?",
+        "International delivery options",
+        "Do you deliver to Tanzania?"
+      ],
+      "responses": [
+        "Currently NeuralMart ships within Kenya only. We're working on expanding to other East African countries soon.",
+        "We don't offer international shipping yet, but you can sign up for our newsletter to be notified when that changes."
+      ]
+    },
+    {
+      "tag": "returns_policy",
+      "patterns": [
+        "What is your return policy?",
+        "Can I return an item?",
+        "How many days do I have to return something?",
+        "Return policy details",
+        "Is this item returnable?"
+      ],
+      "responses": [
+        "You can return most items within 7 days of delivery, as long as they're unused and in original packaging. Some categories (underwear, perishables, custom items) are non-returnable.",
+        "Our return window is 7 days from delivery. Item must be in original condition with tags/packaging intact. Would you like to start a return?"
+      ]
+    },
+    {
+      "tag": "return_process",
+      "patterns": [
+        "How do I return an item?",
+        "I want to return my order",
+        "Steps to send back a product",
+        "How do returns work?",
+        "I need to return this shirt"
+      ],
+      "responses": [
+        "To start a return: go to 'My Orders', select the item, click 'Return Item', choose a reason, and either drop it at a pickup point or schedule a courier pickup. Want me to start this for you now?",
+        "I can help you begin a return. What's the order number and reason for the return (wrong size, damaged, not as described, etc.)?"
+      ]
+    },
+    {
+      "tag": "refund_status",
+      "patterns": [
+        "Where is my refund?",
+        "When will I get my money back?",
+        "Refund not received yet",
+        "How long does a refund take?",
+        "Check refund status"
+      ],
+      "responses": [
+        "Refunds to M-Pesa are typically processed within 3–5 business days after we receive the returned item. Card refunds can take 5–10 business days.",
+        "Let me check that for you — what's the order number or return reference ID?",
+        "Once your return is received at our warehouse, the refund is triggered automatically. Do you have the return tracking number?"
+      ]
+    },
+    {
+      "tag": "exchange_item",
+      "patterns": [
+        "Can I exchange for a different size?",
+        "I want to swap this for another color",
+        "How do I exchange a product?",
+        "Wrong size, need a bigger one"
+      ],
+      "responses": [
+        "Yes, exchanges are available for size/color within 7 days of delivery, subject to stock. I can start that for you — what's the order number and the size/color you'd like instead?",
+        "We can exchange it if the new variant is in stock. Let me check availability — which product and size do you need?"
+      ]
+    },
+    {
+      "tag": "warranty_info",
+      "patterns": [
+        "Does this product have a warranty?",
+        "Warranty period on electronics",
+        "Is this covered under warranty?",
+        "How long is the warranty?"
+      ],
+      "responses": [
+        "Warranty coverage depends on the product and manufacturer — typically 12 months for electronics and appliances. Check the product page under 'Warranty' for specifics.",
+        "Most electronics come with a 1-year manufacturer warranty. Would you like me to check the exact warranty terms for a specific product?"
+      ]
+    },
+    {
+      "tag": "product_defect",
+      "patterns": [
+        "My item arrived broken",
+        "The product is defective",
+        "This phone doesn't turn on",
+        "I received a damaged item",
+        "Faulty product complaint"
+      ],
+      "responses": [
+        "I'm sorry to hear that. Please share the order number and, if possible, a photo of the damage — we'll arrange a free replacement or refund right away.",
+        "That shouldn't have happened. Let's get this fixed — what's the order number? We'll prioritize a replacement or full refund."
+      ]
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": [
+        "What payment methods do you accept?",
+        "Can I pay with M-Pesa?",
+        "Do you accept credit cards?",
+        "How can I pay for my order?",
+        "Is cash on delivery available?"
+      ],
+      "responses": [
+        "We accept M-Pesa, Visa/Mastercard, and Cash on Delivery (available in select areas). M-Pesa is the fastest and most popular option.",
+        "You can pay via M-Pesa STK Push, debit/credit card, or Cash on Delivery where available. Which would you like to use?"
+      ]
+    },
+    {
+      "tag": "mpesa_payment",
+      "patterns": [
+        "How do I pay with M-Pesa?",
+        "M-Pesa payment not going through",
+        "STK push not received",
+        "How does the M-Pesa checkout work?",
+        "My M-Pesa payment failed"
+      ],
+      "responses": [
+        "At checkout, select M-Pesa, enter your phone number, and you'll receive an STK push prompt — just enter your M-Pesa PIN to confirm.",
+        "If you didn't get the STK prompt, check that your phone has network signal and try again, or dial *334# manually and use Paybill 400200 with your order number as the account reference.",
+        "Sorry about that. If the payment was deducted but the order isn't confirmed, it usually resolves within 10 minutes. If not, share your M-Pesa transaction code and I'll investigate."
+      ]
+    },
+    {
+      "tag": "payment_failed",
+      "patterns": [
+        "My payment didn't go through",
+        "Card declined at checkout",
+        "Payment error",
+        "Money deducted but order not showing",
+        "Transaction failed"
+      ],
+      "responses": [
+        "Sorry for the trouble. Could you tell me which payment method you used and share the transaction reference? I'll check what happened.",
+        "If money was deducted but your order isn't confirmed, it's usually a delayed confirmation — it typically resolves within 10–15 minutes. If it doesn't, we'll refund you automatically within 3 business days."
+      ]
+    },
+    {
+      "tag": "payment_security",
+      "patterns": [
+        "Is it safe to pay on this site?",
+        "Is my card information secure?",
+        "How do you protect my payment details?",
+        "Is M-Pesa payment on this site safe?"
+      ],
+      "responses": [
+        "Yes — all payments are processed through PCI-DSS compliant, encrypted gateways. We never store your full card number or M-Pesa PIN on our servers.",
+        "Your payment details are fully encrypted and processed via secure, licensed payment providers. NeuralMart never has access to your M-Pesa PIN."
+      ]
+    },
+    {
+      "tag": "invoice_request",
+      "patterns": [
+        "Can I get a receipt for my order?",
+        "I need an invoice",
+        "Send me the invoice for order #789",
+        "Where can I download my receipt?"
+      ],
+      "responses": [
+        "You can download your invoice from 'My Orders' > select the order > 'Download Invoice'. Want me to email it to you instead?",
+        "I can send that to your registered email — what's the order number?"
+      ]
+    },
+    {
+      "tag": "tax_inquiry",
+      "patterns": [
+        "Is VAT included in the price?",
+        "Do you charge tax?",
+        "Are prices tax inclusive?"
+      ],
+      "responses": [
+        "Yes, all displayed prices are VAT-inclusive at 16%, so there are no surprise charges at checkout.",
+        "Prices shown already include applicable Kenyan VAT — what you see is what you pay, plus any delivery fee."
+      ]
+    },
+    {
+      "tag": "cart_add",
+      "patterns": [
+        "How do I add an item to my cart?",
+        "Add this product to cart",
+        "I can't add this item to my basket",
+        "Add to cart button not working"
+      ],
+      "responses": [
+        "Just click 'Add to Cart' on the product page — it'll appear in your cart icon at the top right. If it's not working, try refreshing the page or check if the item is out of stock.",
+        "Tap 'Add to Cart' on the product listing. If it's greyed out, that item may be temporarily out of stock."
+      ]
+    },
+    {
+      "tag": "cart_remove",
+      "patterns": [
+        "How do I remove an item from my cart?",
+        "Delete a product from my basket",
+        "I added the wrong item, how do I remove it?"
+      ],
+      "responses": [
+        "Open your cart, find the item, and click the trash/remove icon next to it. It'll be removed immediately.",
+        "In your cart, just click 'Remove' beside the item — no confirmation needed."
+      ]
+    },
+    {
+      "tag": "cart_empty",
+      "patterns": [
+        "My cart shows empty but I added items",
+        "Cart keeps clearing itself",
+        "Items disappeared from my cart"
+      ],
+      "responses": [
+        "This can happen if you're not logged in — items in a guest cart clear after some inactivity. Try logging in before adding items so your cart is saved to your account.",
+        "Sorry about that. If you're logged in and this keeps happening, it may be a caching issue — try clearing your browser cache or using the app instead."
+      ]
+    },
+    {
+      "tag": "cart_checkout",
+      "patterns": [
+        "How do I check out?",
+        "I'm ready to pay for my cart",
+        "Checkout is not working",
+        "How do I complete my purchase?"
+      ],
+      "responses": [
+        "Click the cart icon, review your items, then hit 'Proceed to Checkout' — enter your delivery address and choose a payment method to finish.",
+        "From your cart, select 'Checkout', confirm your delivery details, pick M-Pesa/card/COD, and confirm the order. If it's failing at a specific step, let me know which one."
+      ]
+    },
+    {
+      "tag": "wishlist_add",
+      "patterns": [
+        "How do I save an item for later?",
+        "Add this to my wishlist",
+        "How does the wishlist work?",
+        "Can I bookmark products?"
+      ],
+      "responses": [
+        "Click the heart icon on any product to add it to your wishlist. You can view saved items anytime under 'My Wishlist'.",
+        "Tap the heart/save icon on the product page — it'll be stored in your wishlist for easy access later."
+      ]
+    },
+    {
+      "tag": "wishlist_view",
+      "patterns": [
+        "Where is my wishlist?",
+        "Show me my saved items",
+        "I want to see items I've bookmarked"
+      ],
+      "responses": [
+        "Your wishlist is under 'My Account' > 'Wishlist'. Want me to list what's currently saved?",
+        "You can find all saved items in the Wishlist tab of your account. I can pull it up here if you confirm your account."
+      ]
+    },
+    {
+      "tag": "product_search",
+      "patterns": [
+        "I'm looking for a laptop",
+        "Do you have wireless earphones?",
+        "Search for running shoes",
+        "Find me a blender under 5000 shillings",
+        "Show me smartphones"
+      ],
+      "responses": [
+        "Sure! What's your budget and any specific brand or features you're looking for?",
+        "I can search that for you — any price range or preferred brand in mind?",
+        "Let me pull up some options. Do you want new arrivals, best sellers, or the lowest priced first?"
+      ]
+    },
+    {
+      "tag": "product_availability",
+      "patterns": [
+        "Is this item in stock?",
+        "Do you have this in size 42?",
+        "Is the black color available?",
+        "When will this be restocked?"
+      ],
+      "responses": [
+        "Let me check — which product and variant (size/color) are you asking about?",
+        "I'll verify stock levels now. Can you share the product name or link?"
+      ]
+    },
+    {
+      "tag": "restock_inquiry",
+      "patterns": [
+        "When will this be back in stock?",
+        "Notify me when this item is available again",
+        "Can I get an alert for restock?"
+      ],
+      "responses": [
+        "I can set up a restock notification for you — you'll get an email/SMS the moment it's back. Which product is it?",
+        "Click 'Notify Me' on the product page for automatic restock alerts, or tell me the product and I'll set it up here."
+      ]
+    },
+    {
+      "tag": "out_of_stock_notify",
+      "patterns": [
+        "This item shows out of stock",
+        "Why can't I order this product?",
+        "It says unavailable, when will it return?"
+      ],
+      "responses": [
+        "That item is currently out of stock. I can notify you as soon as it's restocked, or suggest similar alternatives — which would you prefer?"
+      ]
+    },
+    {
+      "tag": "product_recommendation",
+      "patterns": [
+        "What phone would you recommend?",
+        "Suggest a good laptop for students",
+        "What's a good gift under 3000 shillings?",
+        "Recommend something similar to this product"
+      ],
+      "responses": [
+        "Happy to help! What's your budget and main use case — work, gaming, everyday browsing?",
+        "Based on your browsing, I'd suggest checking our 'Recommended for You' section — want me to list a few top picks now?"
+      ]
+    },
+    {
+      "tag": "product_comparison",
+      "patterns": [
+        "Compare these two phones",
+        "What's the difference between these two laptops?",
+        "Which is better, product A or product B?"
+      ],
+      "responses": [
+        "I can compare specs, price, and reviews side by side — which two products would you like me to compare?",
+        "Sure, send me the product names or links and I'll break down the key differences."
+      ]
+    },
+    {
+      "tag": "product_review",
+      "patterns": [
+        "How do I leave a review?",
+        "Can I rate a product I bought?",
+        "Where do I write feedback on an item?"
+      ],
+      "responses": [
+        "Go to 'My Orders', find the delivered item, and click 'Write a Review'. You can rate it and add photos.",
+        "You can leave a review from your order history once the item is delivered — it helps other shoppers a lot!"
+      ]
+    },
+    {
+      "tag": "size_guide",
+      "patterns": [
+        "What size should I order?",
+        "Do you have a size chart?",
+        "How do I know my correct clothing size?"
+      ],
+      "responses": [
+        "Each product page has a 'Size Guide' link with detailed measurements. Want me to pull it up for a specific item?",
+        "Check the size chart tab on the product page — if you give me your measurements, I can also suggest the best fit."
+      ]
+    },
+    {
+      "tag": "color_availability",
+      "patterns": [
+        "What colors does this come in?",
+        "Is this available in blue?",
+        "Show me other color options for this product"
+      ],
+      "responses": [
+        "Let me check the available colors for that item — which product is it?"
+      ]
+    },
+    {
+      "tag": "discount_inquiry",
+      "patterns": [
+        "Are there any discounts right now?",
+        "Do you have any sales?",
+        "Is there an ongoing promotion?",
+        "What deals are available today?"
+      ],
+      "responses": [
+        "Yes! Check our 'Deals' section for current promotions — right now we have discounts across electronics and fashion. Want me to show you top deals?",
+        "We run flash sales regularly. Let me check what's active right now for you."
+      ]
+    },
+    {
+      "tag": "coupon_code",
+      "patterns": [
+        "Do you have a coupon code?",
+        "My promo code isn't working",
+        "How do I apply a discount code?",
+        "Where do I enter my voucher?"
+      ],
+      "responses": [
+        "Enter your code in the 'Promo Code' field at checkout, just before you confirm payment. If it's not applying, it may be expired or only valid for certain products — what's the code?",
+        "Let's troubleshoot — what code are you trying to use, and what's in your cart? Some codes have minimum spend or category restrictions."
+      ]
+    },
+    {
+      "tag": "promo_expired",
+      "patterns": [
+        "My discount code says expired",
+        "Why isn't my coupon working anymore?",
+        "The promo I had has ended"
+      ],
+      "responses": [
+        "That code may have passed its validity date. Check the 'Deals' page for current active promotions — I can also suggest an equivalent offer if one's available."
+      ]
+    },
+    {
+      "tag": "loyalty_program",
+      "patterns": [
+        "Do you have a rewards program?",
+        "How do loyalty points work?",
+        "Can I earn points from purchases?",
+        "What is NeuralMart Rewards?"
+      ],
+      "responses": [
+        "Yes! You earn 1 point for every KES 100 spent. Points can be redeemed for discounts on future orders. Check 'My Rewards' in your account to see your balance.",
+        "Our loyalty program rewards you automatically on every purchase — 100 points equals a KES 100 discount. Want to know your current balance?"
+      ]
+    },
+    {
+      "tag": "gift_card",
+      "patterns": [
+        "Do you sell gift cards?",
+        "How do I redeem a gift card?",
+        "Can I buy a voucher for someone?"
+      ],
+      "responses": [
+        "Yes, gift cards are available from KES 500 to KES 20,000 — you can buy one under 'Gift Cards' and it's delivered instantly via email/SMS.",
+        "To redeem, enter the gift card code at checkout under 'Payment Method' > 'Gift Card'."
+      ]
+    },
+    {
+      "tag": "gift_wrapping",
+      "patterns": [
+        "Can I get this gift wrapped?",
+        "Is gift wrapping available?",
+        "Add a gift message to my order"
+      ],
+      "responses": [
+        "Yes! Select 'Gift Wrap' at checkout for a small fee, and you can add a personalized message too."
+      ]
+    },
+    {
+      "tag": "price_match",
+      "patterns": [
+        "Can you match a lower price I found elsewhere?",
+        "Do you offer price matching?",
+        "I found this cheaper on another site"
+      ],
+      "responses": [
+        "We don't have a formal price match policy currently, but we do run frequent price-check promotions — let me see if there's a current deal on that item."
+      ]
+    },
+    {
+      "tag": "price_drop_alert",
+      "patterns": [
+        "Can you tell me when the price drops?",
+        "Notify me if this gets cheaper",
+        "Set a price alert for this item"
+      ],
+      "responses": [
+        "Sure — click 'Track Price' on the product page and you'll get notified the moment it drops. Want me to set that up now for a specific item?"
+      ]
+    },
+    {
+      "tag": "account_creation",
+      "patterns": [
+        "How do I create an account?",
+        "Sign me up",
+        "I want to register",
+        "Do I need an account to shop?"
+      ],
+      "responses": [
+        "You can sign up in under a minute — click 'Register', enter your name, phone number, and email, then verify with an OTP.",
+        "Registration is quick: name, email or phone, and a password. You can also check out as a guest, but an account lets you track orders and earn rewards points."
+      ]
+    },
+    {
+      "tag": "login_issue",
+      "patterns": [
+        "I can't log in",
+        "Login page keeps erroring",
+        "It says my account doesn't exist",
+        "I'm locked out of my account"
+      ],
+      "responses": [
+        "Let's fix that. Are you getting a specific error message, or does the page just not respond?",
+        "Sorry for the trouble. First, try resetting your password via 'Forgot Password'. If that doesn't work, share the email/phone tied to your account and I'll investigate."
+      ]
+    },
+    {
+      "tag": "password_reset",
+      "patterns": [
+        "I forgot my password",
+        "How do I reset my password?",
+        "Password reset link not received",
+        "I need a new password"
+      ],
+      "responses": [
+        "Click 'Forgot Password' on the login page and enter your registered email or phone — a reset link/OTP will be sent within a minute.",
+        "If you didn't receive the reset link, check your spam folder, or let me know your registered email and I'll trigger it again."
+      ]
+    },
+    {
+      "tag": "update_profile",
+      "patterns": [
+        "How do I update my phone number?",
+        "I want to change my email address",
+        "Edit my delivery address",
+        "Update my personal details"
+      ],
+      "responses": [
+        "Go to 'My Account' > 'Profile Settings' to update your name, email, phone, or saved addresses. Changes save instantly.",
+        "You can edit that under Profile Settings. Need help finding it, or would you like me to guide you step by step?"
+      ]
+    },
+    {
+      "tag": "account_security",
+      "patterns": [
+        "How do I secure my account?",
+        "Someone else logged into my account",
+        "I think my account was hacked",
+        "Enable two-factor authentication"
+      ],
+      "responses": [
+        "I'm sorry to hear that — let's secure your account immediately. First, reset your password now, then I'll flag your account for review and check for suspicious orders.",
+        "You can enable 2FA under 'Profile Settings' > 'Security'. If you suspect unauthorized access, change your password right away and let me know so we can investigate recent activity."
+      ]
+    },
+    {
+      "tag": "fraud_report",
+      "patterns": [
+        "I think I was scammed",
+        "This seller looks fraudulent",
+        "Report a suspicious listing",
+        "I never received my item and the seller is unresponsive"
+      ],
+      "responses": [
+        "Thank you for flagging this — I'm escalating it to our Trust & Safety team immediately. Can you share the order number and seller name?",
+        "I take this seriously. Please share details (order ID, seller, what happened) and we'll investigate and protect your payment through our buyer guarantee."
+      ]
+    },
+    {
+      "tag": "newsletter_signup",
+      "patterns": [
+        "How do I subscribe to your newsletter?",
+        "I want to get deal alerts",
+        "Sign me up for promotions"
+      ],
+      "responses": [
+        "You can subscribe at the bottom of any page, or in 'Account Settings' > 'Notifications'. Want me to enable it for your account now?"
+      ]
+    },
+    {
+      "tag": "unsubscribe",
+      "patterns": [
+        "How do I stop getting emails?",
+        "Unsubscribe me from marketing messages",
+        "Too many notifications, please stop"
+      ],
+      "responses": [
+        "No problem — click 'Unsubscribe' at the bottom of any email, or I can turn off marketing notifications on your account right now. Which would you prefer?"
+      ]
+    },
+    {
+      "tag": "data_privacy",
+      "patterns": [
+        "How do you use my data?",
+        "Is my personal information safe?",
+        "Can I delete my account and data?",
+        "What is your privacy policy?"
+      ],
+      "responses": [
+        "We only use your data to process orders, improve recommendations, and communicate about your purchases — never sold to third parties. Full details are in our Privacy Policy page.",
+        "You can request full account and data deletion anytime from 'Account Settings' > 'Privacy', or by asking me here — I'll route that request to our data team."
+      ]
+    },
+    {
+      "tag": "terms_of_service",
+      "patterns": [
+        "Where can I read the terms of service?",
+        "What are your terms and conditions?"
+      ],
+      "responses": [
+        "You can find our full Terms of Service in the footer of the website, or I can send you the link directly."
+      ]
+    },
+    {
+      "tag": "store_location",
+      "patterns": [
+        "Do you have a physical store?",
+        "Where is your pickup point in Nairobi?",
+        "Is there a location I can visit?"
+      ],
+      "responses": [
+        "NeuralMart operates online-only, but we have pickup points in Nairobi CBD, Westlands, Kisumu, and Mombasa. Want the exact address of the nearest one to you?"
+      ]
+    },
+    {
+      "tag": "business_hours",
+      "patterns": [
+        "What are your business hours?",
+        "When is customer support available?",
+        "Are you open on weekends?"
+      ],
+      "responses": [
+        "Our customer support team is available 8am–8pm EAT, Monday to Saturday. I (the AI assistant) am here 24/7 for quick questions."
+      ]
+    },
+    {
+      "tag": "app_download",
+      "patterns": [
+        "Do you have a mobile app?",
+        "Where can I download the NeuralMart app?",
+        "Is there an Android app?"
+      ],
+      "responses": [
+        "Yes! The NeuralMart app is available on Google Play and the App Store — search 'NeuralMart' or I can send you the direct link."
+      ]
+    },
+    {
+      "tag": "website_navigation_help",
+      "patterns": [
+        "How do I find electronics on your site?",
+        "I can't find the categories menu",
+        "How does search work here?"
+      ],
+      "responses": [
+        "Categories are listed in the top menu, or you can use the search bar and filter by price, brand, and rating. What are you trying to find?"
+      ]
+    },
+    {
+      "tag": "currency_conversion",
+      "patterns": [
+        "Are prices in Kenyan shillings?",
+        "Can I pay in US dollars?",
+        "What currency do you use?"
+      ],
+      "responses": [
+        "All prices are listed in Kenyan Shillings (KES). We currently don't support other currencies at checkout."
+      ]
+    },
+    {
+      "tag": "bulk_order",
+      "patterns": [
+        "Can I place a bulk order?",
+        "Do you offer wholesale pricing?",
+        "I want to buy 100 units of this item"
+      ],
+      "responses": [
+        "Yes, we support bulk orders for many products. Please share the product, quantity, and delivery location, and I'll connect you with our bulk sales team for a custom quote."
+      ]
+    },
+    {
+      "tag": "wholesale_inquiry",
+      "patterns": [
+        "How do I become a wholesale buyer?",
+        "Do you have a B2B program?",
+        "Business account for reselling"
+      ],
+      "responses": [
+        "We do offer a B2B/wholesale program for verified businesses. I'll pass your request to our partnerships team — could you share your business name and what products you're interested in?"
+      ]
+    },
+    {
+      "tag": "become_vendor",
+      "patterns": [
+        "How do I sell on NeuralMart?",
+        "I want to become a vendor",
+        "Can I list my products on your marketplace?",
+        "Seller registration process"
+      ],
+      "responses": [
+        "Great! To become a vendor: go to 'Sell on NeuralMart', submit your business details and ID/KRA PIN, and our team reviews applications within 2–3 business days.",
+        "You can apply as a seller through the 'Become a Vendor' page. You'll need a valid ID, KRA PIN, and product catalog. Want me to walk you through it?"
+      ]
+    },
+    {
+      "tag": "vendor_dashboard_help",
+      "patterns": [
+        "How do I access my seller dashboard?",
+        "I can't see my sales analytics",
+        "How do I add a new product listing as a seller?",
+        "Where do I manage my inventory as a vendor?"
+      ],
+      "responses": [
+        "Log into your Seller Center to manage listings, inventory, orders, and view sales analytics. What specifically are you trying to do — add a product, update stock, or check sales?",
+        "You can add new listings under 'Seller Center' > 'Products' > 'Add New'. Let me know if you're running into an error there."
+      ]
+    },
+    {
+      "tag": "vendor_payout",
+      "patterns": [
+        "When do I get paid as a seller?",
+        "My vendor payout hasn't arrived",
+        "How often are seller payments processed?",
+        "Payout schedule for vendors"
+      ],
+      "responses": [
+        "Vendor payouts are processed weekly, every Friday, directly to your registered M-Pesa or bank account, for all orders marked 'Delivered' at least 3 days prior.",
+        "Let me check your payout status — could you share your vendor ID or registered business name?"
+      ]
+    },
+    {
+      "tag": "vendor_commission",
+      "patterns": [
+        "What commission do you charge sellers?",
+        "How much does NeuralMart take per sale?",
+        "Seller fees explained"
+      ],
+      "responses": [
+        "Commission varies by category, typically 5–15% per sale, plus standard payment processing fees. Full rates are listed in the Seller Center under 'Fees & Commission'."
+      ]
+    },
+    {
+      "tag": "subscription_service",
+      "patterns": [
+        "Do you offer subscription boxes?",
+        "Can I set up recurring orders?",
+        "Is there a monthly delivery option?"
+      ],
+      "responses": [
+        "Yes, select 'Subscribe & Save' on eligible products to get automatic recurring deliveries with a discount. You can pause or cancel anytime from your account."
+      ]
+    },
+    {
+      "tag": "recurring_order",
+      "patterns": [
+        "How do I cancel my recurring order?",
+        "Change the frequency of my subscription order",
+        "Skip my next scheduled delivery"
+      ],
+      "responses": [
+        "Go to 'My Account' > 'Subscriptions' to skip, pause, change frequency, or cancel anytime — no penalties."
+      ]
+    },
+    {
+      "tag": "ai_recommendation_explain",
+      "patterns": [
+        "Why am I seeing this product recommendation?",
+        "How does your AI decide what to show me?",
+        "Why is this suggested for me?"
+      ],
+      "responses": [
+        "Our recommendations use your browsing history, past purchases, and semantic similarity to items you've liked — so suggestions get more relevant the more you shop. You can also reset personalization in Privacy Settings if you'd prefer generic recommendations."
+      ]
+    },
+    {
+      "tag": "complaint",
+      "patterns": [
+        "I'm very unhappy with my order",
+        "This service is terrible",
+        "I want to file a complaint",
+        "Your delivery has been late three times now"
+      ],
+      "responses": [
+        "I'm really sorry for the frustration — that's not the experience we want for you. Can you tell me exactly what happened so I can escalate this properly?",
+        "I hear you, and I apologize for this. Let's fix it — please share your order number and I'll prioritize resolving this today."
+      ]
+    },
+    {
+      "tag": "feedback",
+      "patterns": [
+        "I want to give feedback about the app",
+        "Suggestion for improving your website",
+        "Here's some feedback for you"
+      ],
+      "responses": [
+        "Thank you — I'd love to hear it! Your feedback helps us improve NeuralMart.",
+        "We really appreciate that. Please go ahead, I'm listening."
+      ]
+    },
+    {
+      "tag": "track_multiple_orders",
+      "patterns": [
+        "I have three orders, can you check all of them?",
+        "Track all my recent orders at once",
+        "Give me status updates on all pending orders"
+      ],
+      "responses": [
+        "Sure, I can check multiple orders at once — please share the order numbers, or I can pull up all orders linked to your account if you confirm your registered email."
+      ]
+    },
+    {
+      "tag": "delivery_failed",
+      "patterns": [
+        "My package was marked delivered but I never got it",
+        "Courier didn't show up",
+        "Delivery attempt failed",
+        "No one delivered my order today"
+      ],
+      "responses": [
+        "I'm sorry about that — let's sort it out right away. What's the order number? I'll check the courier's delivery log and arrange a redelivery or refund if needed."
+      ]
+    },
+    {
+      "tag": "reschedule_delivery",
+      "patterns": [
+        "Can I change my delivery date?",
+        "I won't be home, can you reschedule delivery?",
+        "Deliver my order tomorrow instead"
+      ],
+      "responses": [
+        "Yes, as long as the order hasn't been dispatched for delivery yet. What's the order number and your preferred new delivery date?"
+      ]
+    }
+  ]
+}
