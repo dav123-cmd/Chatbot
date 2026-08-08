@@ -2,12 +2,15 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+from dotenv import load_dotenv
+path_to_env = os.path.join(BASE_DIR, ".env")
+load_dotenv(path_to_env)
 
-SECRET_KEY = "django-insecure-bilstm-chatbot-demo-key-change-me"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",") if os.getenv("ALLOWED_HOSTS") else ["*"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
