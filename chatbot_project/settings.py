@@ -8,7 +8,7 @@ load_dotenv(path_to_env)
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",") if os.getenv("ALLOWED_HOSTS") else ["*"]
 
@@ -81,7 +81,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-
+STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Path to the trained BiLSTM chatbot checkpoint produced by chatbot/ml/train.py
