@@ -25,7 +25,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run database migrations
+        env:
+          SECRET_KEY: test-secret-key-for-github-actions
+          DEBUG: "False"
         run: python manage.py migrate
 
       - name: Run chatbot tests
+        env:
+          SECRET_KEY: test-secret-key-for-github-actions
+          DEBUG: "False"
         run: python manage.py test chatbot
