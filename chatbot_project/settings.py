@@ -91,5 +91,5 @@ CHATBOT_INTENTS_PATH = os.path.join(BASE_DIR, "chatbot", "ml", "intents.json")
 # Minimum softmax confidence required to trust the predicted intent
 CHATBOT_CONFIDENCE_THRESHOLD = 0.55
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
+
 
