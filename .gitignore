@@ -1,3 +1,43 @@
 .env
 README.md
 staticfiles
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets & local configuration
+.env
+.env.*
+local_settings.py
+
+# Databases & logs
+*.sqlite3
+*.db
+*.log
+
+# Static & media files
+/staticfiles/
+/media/
+
+# Testing & coverage reports
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
